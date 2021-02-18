@@ -43,7 +43,7 @@ $mensaje = "<script>
 					showConfirmButton: true,
 				}).then(function (result) {
 					if (true) {
-						window.location = 'usuarios';
+						window.location = 'inicio';
 					}
 				})
 			</script>";

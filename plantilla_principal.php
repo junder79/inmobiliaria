@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/multi.min.css">
     <link rel="stylesheet" href="public/css/style-accordion.css">
-    <link rel="stylesheet" href="public/css/swal2.css">
+  
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -28,7 +28,7 @@ session_start();
     <script src="public/js/main.js"></script>
     <script src="public/js/multi.min.js"></script>
     <script src="public/js/util-accordion.js"></script>
-    <script src="public/js/swal2.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/e07e2fa348.js"></script>
 
 

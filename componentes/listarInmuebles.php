@@ -20,8 +20,10 @@ include_once('modalMantenedorRevisado.php');
                     <th scope="col">Tipo</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Hora</th>
-                    <th scope="col">Acción</th>
-                    <th scope="col">Acción</th>
+                    <th width="5%" scope="col">Informe</th>
+                    <th width="5%" scope="col">Acción</th>
+                    <th width="5%" scope="col">Acción</th>
+                   
                 </tr>
             </thead>
             <tbody style="background-color:#f5f5f5">
@@ -34,8 +36,10 @@ include_once('modalMantenedorRevisado.php');
                         <td><?php echo $filas['tipo']; ?></td>
                         <td><?php echo $filas['fecha']; ?></td>
                         <td><?php echo $filas['hora']; ?></td>
-                        <td><button type="button" class="button-info-icon btn-info btn btn-sm" data-toggle="modal" data-target="#detalle_inmuebles" id="<?php echo $value['idInmueble'] ?>" onclick="detallesInmuebles(this);"><i class="fas fa-info-circle"></i></button></td>
-                        <td><button type="button" data-inmueble="<?php echo $filas['nombre'] ?>" data-tipo="<?php echo $filas['tipo'] ?>" data-fecha="<?php echo $filas['fecha'] ?>" class="button-info-icon btn-info btn btn-sm" data-toggle="modal" data-target="#modalMantenedorRevisado" id="<?php echo $filas['idInmueble'] ?>" onclick="modificarInmueble(this);"><i class="fas fa-info-circle"></i></button></td>
+                        <td><button type="button" class="btn-danger btn btn-sm" id="<?php echo $filas['idInmueble'] ?>" ><i class="fas fa-file-pdf"></i></button></td>
+                        <td><button type="button" data-inmueble="<?php echo $filas['nombre'] ?>" data-tipo="<?php echo $filas['tipo'] ?>" data-fecha="<?php echo $filas['fecha'] ?>" class="btn-warning btn btn-sm" data-toggle="modal" data-target="#modalMantenedorRevisado" id="<?php echo $filas['idInmueble'] ?>" onclick="modificarInmueble(this);"><i class="fas fa-edit"></i></button></td>
+                        <td><button type="button" class="btn-danger btn btn-sm" id="<?php echo $filas['idInmueble'] ?>" onclick="eliminarRevisado(this);"><i class="fas fa-trash-alt"></i></button></td>
+                        
                     </tr>
                 <?php } ?>
             </tbody>
@@ -81,11 +85,45 @@ include_once('modalMantenedorRevisado.php');
         var nombre = button.getAttribute('data-inmueble');
         var tipo = button.getAttribute('data-tipo');
         var fecha = button.getAttribute('data-fecha');
-        var idInmueble =  button.getAttribute('id');
+        var idInmueble = button.getAttribute('id');
         console.log("ID " + idInmueble);
         $('#nombreInmueble').val(nombre);
         $('#tipoInmueble').val(tipo);
         $('#fechaCreacion').val(fecha);
         $('#idInmueble').val(idInmueble);
+    }
+
+    function eliminarRevisado(button) {
+        Swal.fire({
+            title: '¿Deseas eliminar el revizado de este inmueble?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                
+                var idInmueble = button.getAttribute('id');
+                var opcion = "eliminar";
+                
+                console.log("Eliminar" + idInmueble);
+                $.ajax({
+                    url: "APP/mantenedorInmuebles.php",
+                    method: "POST",
+                    data: {
+                        "idInmueble": idInmueble,
+                        "opcion": opcion
+                    },
+                    success: function(response) {
+                        $('#mensajeRevisado').html(response);
+                        console.log(response);
+                    }
+                });
+            }
+        })
+
+        
     }
 </script>

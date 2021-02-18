@@ -17,7 +17,7 @@ class Funciones
 	{
 		$ObjetoConexion = new Conectar();
 		$conexion = $ObjetoConexion->conectarBD();
-		$sql = "UPDATE inmuebles SET nombre = '$inmueble', tipo = '$tipoInmueble', fecha = $fechaCreacion WHERE idInmueble = $idInmueble";
+		$sql = "UPDATE inmuebles SET nombre = '$inmueble', tipo = '$tipoInmueble', fecha = '$fechaCreacion' WHERE idInmueble = $idInmueble";
 
 		return mysqli_query($conexion, $sql);
 	}
@@ -26,8 +26,9 @@ class Funciones
 	{
 		$ObjetoConexion = new Conectar();
 		$conexion = $ObjetoConexion->conectarBD();
+		
 		$sql = "DELETE FROM inmuebles WHERE idInmueble = $idInmueble";
-
+		echo $sql;
 		return mysqli_query($conexion, $sql);
 	}
 }
