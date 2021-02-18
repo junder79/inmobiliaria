@@ -5,6 +5,8 @@ $ObjetoFunciones = new Funciones();
 
 $getInmuebles = $ObjetoFunciones->getInmueblesRevisados();
 
+include_once('modalMantenedorRevisado.php');
+
 ?>
 
 
@@ -19,6 +21,7 @@ $getInmuebles = $ObjetoFunciones->getInmueblesRevisados();
                     <th scope="col">Fecha</th>
                     <th scope="col">Hora</th>
                     <th scope="col">Acción</th>
+                    <th scope="col">Acción</th>
                 </tr>
             </thead>
             <tbody style="background-color:#f5f5f5">
@@ -32,6 +35,7 @@ $getInmuebles = $ObjetoFunciones->getInmueblesRevisados();
                         <td><?php echo $filas['fecha']; ?></td>
                         <td><?php echo $filas['hora']; ?></td>
                         <td><button type="button" class="button-info-icon btn-info btn btn-sm" data-toggle="modal" data-target="#detalle_inmuebles" id="<?php echo $value['idInmueble'] ?>" onclick="detallesInmuebles(this);"><i class="fas fa-info-circle"></i></button></td>
+                        <td><button type="button" data-inmueble="<?php echo $filas['nombre'] ?>" data-tipo="<?php echo $filas['tipo'] ?>" data-fecha="<?php echo $filas['fecha'] ?>" class="button-info-icon btn-info btn btn-sm" data-toggle="modal" data-target="#modalMantenedorRevisado" id="<?php echo $filas['idInmueble'] ?>" onclick="modificarInmueble(this);"><i class="fas fa-info-circle"></i></button></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -72,4 +76,16 @@ $getInmuebles = $ObjetoFunciones->getInmueblesRevisados();
             }
         },
     });
+
+    function modificarInmueble(button) {
+        var nombre = button.getAttribute('data-inmueble');
+        var tipo = button.getAttribute('data-tipo');
+        var fecha = button.getAttribute('data-fecha');
+        var idInmueble =  button.getAttribute('id');
+        console.log("ID " + idInmueble);
+        $('#nombreInmueble').val(nombre);
+        $('#tipoInmueble').val(tipo);
+        $('#fechaCreacion').val(fecha);
+        $('#idInmueble').val(idInmueble);
+    }
 </script>
