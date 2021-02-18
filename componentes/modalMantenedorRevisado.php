@@ -37,14 +37,16 @@
 
 <script>
   $('#btn-guardar').click(function(e) {
-    e.preventDefault();
-    var form = ('#form').serialize();
+
+    var form = $('#form-revisado').serialize();
+    console.log(form);
     $.ajax({
       type: "POST",
       url: "APP/mantenedorInmuebles.php",
       data: form,
       success: function(response) {
         $('#mensajeRevisado').html(response);
+        console.log(response);
       }
     });
   });
