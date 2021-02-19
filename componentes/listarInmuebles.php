@@ -36,9 +36,9 @@ include_once('modalMantenedorRevisado.php');
                         <td><?php echo $filas['tipo']; ?></td>
                         <td><?php echo $filas['fecha']; ?></td>
                         <td><?php echo $filas['hora']; ?></td>
-                        <td><button type="button" class="btn-danger btn btn-sm" id="<?php echo $filas['idInmueble'] ?>" ><i class="fas fa-file-pdf"></i></button></td>
+                        <td><a target="_blank" href="http://grupohexxa.cl/inmobiliariaAPP/tcpdf/examples/output/<?php echo $filas['idInmueble'] . "_" . $filas['nombre'] . ".pdf" ?>;"><button type="button" class="btn-danger btn btn-sm" id="<?php echo $filas['idInmueble'] ?>" ><i class="fas fa-file-pdf"></i></button></a></td>
                         <td><button type="button" data-inmueble="<?php echo $filas['nombre'] ?>" data-tipo="<?php echo $filas['tipo'] ?>" data-fecha="<?php echo $filas['fecha'] ?>" class="btn-warning btn btn-sm" data-toggle="modal" data-target="#modalMantenedorRevisado" id="<?php echo $filas['idInmueble'] ?>" onclick="modificarInmueble(this);"><i class="fas fa-edit"></i></button></td>
-                        <td><button type="button" class="btn-danger btn btn-sm" id="<?php echo $filas['idInmueble'] ?>" onclick="eliminarRevisado(this);"><i class="fas fa-trash-alt"></i></button></td>
+                        <td><button type="button" class="btn-dark btn btn-sm" id="<?php echo $filas['idInmueble'] ?>" onclick="eliminarRevisado(this);"><i style="color:white"  class="fas fa-trash-alt"></i></button></td>
                         
                     </tr>
                 <?php } ?>

@@ -28,7 +28,6 @@ class Funciones
 		$conexion = $ObjetoConexion->conectarBD();
 		
 		$sql = "DELETE FROM inmuebles WHERE idInmueble = $idInmueble";
-		echo $sql;
 		return mysqli_query($conexion, $sql);
 	}
 }
