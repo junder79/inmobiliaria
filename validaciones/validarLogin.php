@@ -22,7 +22,7 @@ if (empty($correo) && empty($contrasena)) {
                 });</script>";
 } else {
 
-    if ($correo = "admin@hexxa.cl" && $contrasena = "2021") {
+    if ($correo == "admin@hexxa.cl" && $contrasena == "2021") {
         $_SESSION['active'] = true;
         $mensaje =  "<script>
                         iziToast.success({

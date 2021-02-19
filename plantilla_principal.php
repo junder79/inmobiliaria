@@ -47,6 +47,8 @@ session_start();
             if ($_GET["ruta"] == "inicio") { // AÑADIR RUTAS A CUALES PODER INGRESAR
                 include  "componentes/sidenav.php";
                 include "componentes/" . $_GET['ruta'] . ".php";
+            } else if($_GET["ruta"] == "logout"){
+                include "componentes/" . $_GET['ruta'] . ".php";
             } else {
                 include "componentes/404.php";
             }

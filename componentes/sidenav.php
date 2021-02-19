@@ -1,12 +1,12 @@
 <div class="header shadow-lg">
 	<div class="logo">
-		<span>ProjectName</span>
+		<span>inmobiliaria</span>
 	</div>
 	<a href="#" class="nav-trigger"><span></span></a>
 </div>
 <div class="side-nav">
 	<div class="logo">
-		<span>ProjectName</span>
+		<span>inmobiliaria</span>
 	</div>
 
 	<nav>
