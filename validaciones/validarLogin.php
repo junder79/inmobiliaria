@@ -31,7 +31,7 @@ if (empty($correo) && empty($contrasena)) {
                         });
                         
                         setTimeout(function() {
-                            window.location='combustible'
+                            window.location='inicio'
                         }, 1000);
                     </script>";
     } else {

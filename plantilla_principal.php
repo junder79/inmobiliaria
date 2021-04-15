@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/multi.min.css">
     <link rel="stylesheet" href="public/css/style-accordion.css">
-
+  
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -44,15 +44,12 @@ session_start();
     <?php
     if (isset($_SESSION['active']) && $_SESSION['active'] == TRUE) {
         if (isset($_GET["ruta"])) {
-            if ($_GET["ruta"] == "combustible") { // AÑADIR RUTAS A CUALES PODER INGRESAR
+            if ($_GET["ruta"] == "inicio") { // AÑADIR RUTAS A CUALES PODER INGRESAR
                 include  "componentes/sidenav.php";
                 include "componentes/" . $_GET['ruta'] . ".php";
-            }else if ($_GET["ruta"] == "proveedor") {
-                include  "componentes/sidenav.php";
+            } else if($_GET["ruta"] == "logout"){
                 include "componentes/" . $_GET['ruta'] . ".php";
-            } else if ($_GET["ruta"] == "logout") {
-                include "componentes/" . $_GET['ruta'] . ".php";
-            }  else {
+            } else {
                 include "componentes/404.php";
             }
         }
