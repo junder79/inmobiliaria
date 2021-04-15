@@ -6,7 +6,7 @@
             $host="localhost";
             $user="grupohex_siscom";
             $password="hexxasiscom";
-            $database="grupohex_inmobiliariaapp";
+            $database="grupohex_sistema";
     
             $conexion =mysqli_connect($host , $user , $password , $database) or die ("Error al conectar");
              mysqli_set_charset($conexion, 'utf8');
