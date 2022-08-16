@@ -8,7 +8,7 @@ class Funciones
 	{
 		$ObjetoConexion = new Conectar();
 		$conexion = $ObjetoConexion->conectarBD();
-		$sql = "SELECT idInmueble , id , nombre, tipo, fecha, hora , idObra from inmuebles";
+		$sql = "SELECT idInmueble , id , nombre, tipo, fecha, hora , idObra, tienePdf from inmuebles";
 
 		return mysqli_query($conexion, $sql);
 	}
