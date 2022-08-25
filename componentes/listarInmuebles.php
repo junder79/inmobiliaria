@@ -38,8 +38,8 @@ include_once('modalMantenedorRevisado.php');
                         <td>
                             <?php if ($filas['tienePdf']) { ?>
 
-                                <!-- <a target="_blank" href="http://grupohexxa.cl/inmobiliariaAPP/tcpdf/examples/informe.php?idInmueble=<?php echo $filas['idInmueble'] ?>"> -->
-                                <a target="_blank" href="http://grupohexxa.cl/inmobiliariaAPP/tcpdf/examples/output/<?php echo $filas['idInmueble'] . "_" . $filas['nombre'] . ".pdf" ?>">
+                                <!-- <a target="_blank" href="http://grupohexxa.com/sistemas/inmobiliariaAPP/tcpdf/examples/informe.php?idInmueble=<?php echo $filas['idInmueble'] ?>"> -->
+                                <a target="_blank" href="http://grupohexxa.com/sistemas/inmobiliariaAPP/tcpdf/examples/output/<?php echo $filas['idInmueble'] . "_" . $filas['nombre'] . ".pdf" ?>">
                                     <button type="button" class="btn-danger btn btn-sm" id="<?php echo $filas['idInmueble'] ?>"><i class="fas fa-file-pdf"></i>
                                     </button>
                                 </a>
@@ -65,7 +65,7 @@ include_once('modalMantenedorRevisado.php');
         const idInmueble = $(this).attr('id-inmueble');
 
         $.ajax({
-            url: "https://grupohexxa.cl/inmobiliariaAPP/tcpdf/examples/generateImage.php",
+            url: "https://grupohexxa.com/sistemas/inmobiliariaAPP/tcpdf/examples/generateImage.php",
             method: "POST",
             data: {
                 "idInmueble": idInmueble
