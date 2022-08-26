@@ -178,7 +178,7 @@ include_once('modalMantenedorRevisado.php');
                     },
                     success: function(response) {
                         $('#mensajeRevisado').html(response);
-                        console.log(response);
+                        // console.log(response);
                     }
                 });
             }

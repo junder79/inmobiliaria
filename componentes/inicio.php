@@ -37,7 +37,7 @@
       success: function(response) {
         $('#spinner_inmuebles').hide();
         $('#tablaInmueble').html(response);
-        console.log("DATA" + response);
+        // console.log("DATA" + response);
       }
     });
   }
